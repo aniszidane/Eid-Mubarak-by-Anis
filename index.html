@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>عيد فطر سعيد | By Anis Zidane</title>
+  <meta name="description" content="Premium Eid Greeting Website by Anis Zidane" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <canvas id="fxCanvas"></canvas>
+
+  <audio id="takbirAudio" src="Taker.mp3" preload="auto" loop></audio>
+
+  <!-- Loader -->
+  <div class="loader" id="loader">
+    <div class="loader-box">
+      <div class="loader-moon"></div>
+      <h2>عيدكم مبارك ✨</h2>
+      <p>Premium Experience by Anis Zidane</p>
+    </div>
+  </div>
+
+  <!-- Welcome Popup -->
+  <div class="welcome-popup" id="welcomePopup">
+    <div class="welcome-card">
+      <div class="welcome-glow"></div>
+      <p class="popup-badge">🌙 عيد الفطر المبارك</p>
+      <h2>أهلاً بك</h2>
+      <p class="popup-text">
+        اكتب اسمك لتظهر لك تهنئة خاصة، ثم ادخل للاستمتاع بالموقع.
+      </p>
+
+      <input type="text" id="popupNameInput" placeholder="اكتب اسمك هنا..." />
+      <div class="popup-actions">
+        <button id="startExperienceBtn">ابدأ التجربة ✨</button>
+      </div>
+
+      <p class="popup-note">By Anis Zidane</p>
+    </div>
+  </div>
+
+  <div class="autoplay-hint hidden" id="autoplayHint">
+    اضغط على زر الدخول لتشغيل التكبيرات 🎵
+  </div>
+
+  <div class="bg-orb orb-1"></div>
+  <div class="bg-orb orb-2"></div>
+  <div class="bg-orb orb-3"></div>
+
+  <div class="lantern lantern-1"></div>
+  <div class="lantern lantern-2"></div>
+  <div class="lantern lantern-3"></div>
+
+  <header class="topbar">
+    <div class="brand">🌙 Eid Mubarak</div>
+
+    <nav class="nav">
+      <a href="#hero">الرئيسية</a>
+      <a href="#countdown">العدّاد</a>
+      <a href="#cards">التهاني</a>
+      <a href="#duas">الأدعية</a>
+    </nav>
+
+    <div class="creator">By Anis Zidane</div>
+  </header>
+
+  <main id="hero" class="hero">
+    <div class="moon"></div>
+
+    <div class="stars">
+      <span></span><span></span><span></span><span></span><span></span>
+      <span></span><span></span><span></span><span></span><span></span>
+      <span></span><span></span>
+    </div>
+
+    <section class="hero-card">
+      <div class="hero-topline">✨ مناسبة عيد الفطر المبارك ✨</div>
+
+      <div class="royal-name-wrap" id="royalNameWrap">
+        <div class="royal-name" id="royalName">ضيفنا الكريم</div>
+      </div>
+
+      <h1 class="hero-title">
+        عيدكم مبارك
+        <span id="typingText"></span>
+      </h1>
+
+      <p class="hero-subtitle">
+        تقبل الله منا ومنكم صالح الأعمال، وجعل العيد عليكم نورًا وفرحًا وسكينة،
+        وكل عام وأنتم بألف خير.
+      </p>
+
+      <div class="name-box">
+        <input type="text" id="visitorName" placeholder="اكتب اسمك..." />
+        <button id="generateBtn">أنشئ تهنئة باسمي</button>
+      </div>
+
+      <div class="greeting-box" id="captureCard">
+        <h2>تهنئة خاصة 💛</h2>
+        <p id="personalGreeting">
+          كل عام وأنتم بخير، عيد سعيد مليء بالبهجة والرزق والراحة.
+        </p>
+      </div>
+
+      <div class="action-grid">
+        <button class="action-btn" id="copyBtn">نسخ التهنئة</button>
+        <button class="action-btn" id="shareBtn">مشاركة</button>
+        <button class="action-btn" id="whatsappBtn">واتساب</button>
+        <button class="action-btn" id="randomBtn">عشوائية</button>
+        <button class="action-btn" id="saveImageBtn">حفظ PNG</button>
+        <button class="action-btn gold" id="audioBtn">إيقاف التكبيرات</button>
+      </div>
+    </section>
+  </main>
+
+  <section id="countdown" class="section">
+    <div class="section-head">
+      <span>⏳</span>
+      <h2>العدّاد</h2>
+    </div>
+
+    <p class="section-text">
+      يمكنك تعديل تاريخ العيد أو صلاة العيد من داخل ملف JavaScript.
+    </p>
+
+    <div class="countdown-grid">
+      <div class="count-card">
+        <strong id="days">00</strong>
+        <span>يوم</span>
+      </div>
+      <div class="count-card">
+        <strong id="hours">00</strong>
+        <span>ساعة</span>
+      </div>
+      <div class="count-card">
+        <strong id="minutes">00</strong>
+        <span>دقيقة</span>
+      </div>
+      <div class="count-card">
+        <strong id="seconds">00</strong>
+        <span>ثانية</span>
+      </div>
+    </div>
+
+    <p class="status-text" id="countdownStatus">جاري الحساب...</p>
+  </section>
+
+  <section id="cards" class="section">
+    <div class="section-head">
+      <span>💌</span>
+      <h2>بطاقات تهنئة جاهزة</h2>
+    </div>
+
+    <div class="cards-grid">
+      <article class="mini-card">
+        <h3>للأصدقاء</h3>
+        <p>عيدكم مبارك يا أغلى الأصدقاء، جعل الله أيامكم سعادة ونجاحًا وفرحًا دائمًا.</p>
+        <button class="card-copy" data-text="عيدكم مبارك يا أغلى الأصدقاء، جعل الله أيامكم سعادة ونجاحًا وفرحًا دائمًا.">نسخ</button>
+      </article>
+
+      <article class="mini-card">
+        <h3>للعائلة</h3>
+        <p>إلى عائلتي الغالية، كل عام وأنتم بخير، أعاده الله علينا وعليكم بالصحة والبركة والمحبة.</p>
+        <button class="card-copy" data-text="إلى عائلتي الغالية، كل عام وأنتم بخير، أعاده الله علينا وعليكم بالصحة والبركة والمحبة.">نسخ</button>
+      </article>
+
+      <article class="mini-card">
+        <h3>للأحباب</h3>
+        <p>عيد سعيد على من يسكنون القلب، أسأل الله أن يديم عليكم الفرح والنور والسكينة.</p>
+        <button class="card-copy" data-text="عيد سعيد على من يسكنون القلب، أسأل الله أن يديم عليكم الفرح والنور والسكينة.">نسخ</button>
+      </article>
+
+      <article class="mini-card">
+        <h3>للزملاء</h3>
+        <p>كل عام وأنتم بخير، عيد مبارك لكم، ومزيدًا من التوفيق والنجاح في حياتكم وأعمالكم.</p>
+        <button class="card-copy" data-text="كل عام وأنتم بخير، عيد مبارك لكم، ومزيدًا من التوفيق والنجاح في حياتكم وأعمالكم.">نسخ</button>
+      </article>
+    </div>
+  </section>
+
+  <section id="duas" class="section">
+    <div class="section-head">
+      <span>🤲</span>
+      <h2>أدعية العيد</h2>
+    </div>
+
+    <div class="dua-grid">
+      <div class="dua-card">
+        <p>اللهم اجعل هذا العيد فرحًا لكل قلب، وفرجًا لكل مهموم، وشفاءً لكل مريض.</p>
+      </div>
+      <div class="dua-card">
+        <p>اللهم تقبل منا ومنهم الصيام والقيام وصالح الأعمال، واكتب لنا عيدًا مباركًا سعيدًا.</p>
+      </div>
+      <div class="dua-card">
+        <p>اللهم ارزقنا وإياهم الطمأنينة والرضا، وافتح لنا أبواب الخير والرحمة والرزق.</p>
+      </div>
+      <div class="dua-card">
+        <p>يا رب اجعل أيامنا القادمة أجمل، واملأ بيوتنا نورًا ومحبةً وبركةً في هذا العيد.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section signature-wrap">
+    <div class="signature-card">
+      <h2>Premium Eid Greeting Experience</h2>
+      <p>
+        موقع عيد أنيق، احتفالي، ومميز، مصمم ليعطي كل زائر إحساسًا فاخرًا
+        مع تهنئة خاصة ولمسات بصرية جميلة.
+      </p>
+      <div class="signature-name">By Anis Zidane</div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p>عيد فطر سعيد عليكم وعلى أحبابكم 🤍</p>
+    <p>Designed with love by <span>Anis Zidane</span></p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+    </html>
